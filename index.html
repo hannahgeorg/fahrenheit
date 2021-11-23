@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Fläche eines Rechtecks</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script>
+			"use strict";
+
+			function rechnung1(a) {
+				a = a*1.8+32;
+				if (a<55) {  return a= a + " F°." + " Du brachst eine Jacke!"}
+				else if (a>88) {  return a= a + " F°." + " Lass deine Jacke zuhause!"}
+			}
+			function rechnung2(a) {
+			 return (a-32) * 5/9;
+				
+			}
+			
+			
+			function fFahrenheit() {
+				let vJacke1
+				let vFahrenheit = document.getElementById("idSeitea").value;
+				let ausgabe = "Eine Temperatur von " + vFahrenheit + "C°" + " macht in Fahrenheit: " + rechnung1(vFahrenheit);
+				document.getElementById("idAusgabe1").innerHTML = ausgabe;
+				}
+			
+			function fCelsius() {
+				let vCelsius = document.getElementById("idSeiteb").value;
+				let ausgabe1 = "Eine Temperatur von " + vCelsius + " F°" + " macht in Celsius: " + + rechnung2(vCelsius)  +  " F°";
+				
+				document.getElementById("idAusgabe1").innerHTML = ausgabe1;
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1> Celsius - Fahrenheit Umrechner</h1>
+		Celsius in Grad: <input id="idSeitea" type="text" value="2"> <button onClick="fFahrenheit();">Berechnung Fahrenheit </button><br /><br />
+		Fahrenheit in Grad: <input id="idSeiteb" type="text" value="3"> <button onClick="fCelsius();">Berechnung Celsius </button><br /><br />
+
+		
+		<div id="idAusgabe1"></div>
+
+	</body>
+</html>
